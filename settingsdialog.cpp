@@ -18,3 +18,10 @@ void SettingsDialog::on_buttonBox_rejected()
     this->reject();
 }
 
+
+void SettingsDialog::on_listSettings_currentItemChanged(QListWidgetItem *current, QListWidgetItem *previous)
+{
+    int currentIndex = ui->listSettings->row(current);
+    ui->stackedWidget->setCurrentIndex(currentIndex);
+}
+

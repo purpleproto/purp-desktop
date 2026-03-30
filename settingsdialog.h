@@ -2,6 +2,7 @@
 #define SETTINGSDIALOG_H
 
 #include <QDialog>
+#include <QListWidgetItem>
 
 namespace Ui {
 class SettingsDialog;
@@ -17,6 +18,8 @@ public:
 
 private slots:
     void on_buttonBox_rejected();
+
+    void on_listSettings_currentItemChanged(QListWidgetItem *current, QListWidgetItem *previous);
 
 private:
     Ui::SettingsDialog *ui;
