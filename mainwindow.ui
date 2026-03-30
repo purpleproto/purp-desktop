@@ -23,8 +23,112 @@
      <height>21</height>
     </rect>
    </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="actionImport_Proxy_List"/>
+    <addaction name="actionSettings"/>
+    <addaction name="separator"/>
+    <addaction name="actionExit"/>
+   </widget>
+   <widget class="QMenu" name="menuConnection">
+    <property name="title">
+     <string>Connection</string>
+    </property>
+    <widget class="QMenu" name="menuDiagnostics">
+     <property name="title">
+      <string>Diagnostics</string>
+     </property>
+     <addaction name="actionPing_All_Nodes"/>
+     <addaction name="actionSpeed_Test"/>
+     <addaction name="actionMTU_Discover"/>
+     <addaction name="actionTrace_Route"/>
+     <addaction name="actionDNS_Leak_Test"/>
+    </widget>
+    <addaction name="menuDiagnostics"/>
+    <addaction name="separator"/>
+    <addaction name="actionSmart_Mode"/>
+    <addaction name="actionKill_Switch"/>
+   </widget>
+   <widget class="QMenu" name="menuInfo">
+    <property name="title">
+     <string>Info</string>
+    </property>
+    <addaction name="actionCheck_for_updates"/>
+    <addaction name="actionAbout"/>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuConnection"/>
+   <addaction name="menuInfo"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionImport_Proxy_List">
+   <property name="text">
+    <string>Import Proxy List</string>
+   </property>
+  </action>
+  <action name="actionSettings">
+   <property name="text">
+    <string>Settings</string>
+   </property>
+  </action>
+  <action name="actionExit">
+   <property name="text">
+    <string>Exit</string>
+   </property>
+  </action>
+  <action name="actionPing_All_Nodes">
+   <property name="text">
+    <string>Ping All Nodes</string>
+   </property>
+  </action>
+  <action name="actionSpeed_Test">
+   <property name="text">
+    <string>Speed Test</string>
+   </property>
+  </action>
+  <action name="actionMTU_Discover">
+   <property name="text">
+    <string>MTU Discover</string>
+   </property>
+  </action>
+  <action name="actionTrace_Route">
+   <property name="text">
+    <string>Trace Route</string>
+   </property>
+  </action>
+  <action name="actionDNS_Leak_Test">
+   <property name="text">
+    <string>DNS Leak Test</string>
+   </property>
+  </action>
+  <action name="actionKill_Switch">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Kill Switch</string>
+   </property>
+  </action>
+  <action name="actionSmart_Mode">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Smart Mode</string>
+   </property>
+  </action>
+  <action name="actionCheck_for_updates">
+   <property name="text">
+    <string>Check for updates</string>
+   </property>
+  </action>
+  <action name="actionAbout">
+   <property name="text">
+    <string>About</string>
+   </property>
+  </action>
  </widget>
  <resources/>
  <connections/>
