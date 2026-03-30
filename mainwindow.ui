@@ -18,13 +18,13 @@
     <item>
      <widget class="QTabWidget" name="tabWidget">
       <property name="currentIndex">
-       <number>0</number>
+       <number>1</number>
       </property>
-      <widget class="QWidget" name="tab">
+      <widget class="QWidget" name="tabGeneral">
        <attribute name="title">
         <string>General</string>
        </attribute>
-       <widget class="QTableWidget" name="tableWidget">
+       <widget class="QTableWidget" name="proxyTable">
         <property name="geometry">
          <rect>
           <x>0</x>
@@ -82,7 +82,7 @@
         </column>
        </widget>
       </widget>
-      <widget class="QWidget" name="tab_2">
+      <widget class="QWidget" name="tabStats">
        <attribute name="title">
         <string>Stats</string>
        </attribute>
@@ -90,7 +90,7 @@
      </widget>
     </item>
     <item>
-     <widget class="QPlainTextEdit" name="plainTextEdit"/>
+     <widget class="QPlainTextEdit" name="logsArea"/>
     </item>
    </layout>
   </widget>
