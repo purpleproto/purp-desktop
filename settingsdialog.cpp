@@ -12,3 +12,9 @@ SettingsDialog::~SettingsDialog()
 {
     delete ui;
 }
+
+void SettingsDialog::on_buttonBox_rejected()
+{
+    this->reject();
+}
+
