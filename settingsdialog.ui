@@ -41,18 +41,18 @@
    <item row="0" column="1">
     <widget class="QStackedWidget" name="stackedWidget">
      <property name="currentIndex">
-      <number>1</number>
+      <number>0</number>
      </property>
-     <widget class="QWidget" name="page">
+     <widget class="QWidget" name="pageGeneral">
       <layout class="QVBoxLayout" name="verticalLayout">
        <item>
-        <widget class="QGroupBox" name="groupBox">
+        <widget class="QGroupBox" name="startupGroupBox">
          <property name="title">
           <string>Startup</string>
          </property>
          <layout class="QVBoxLayout" name="verticalLayout_2">
           <item>
-           <widget class="QCheckBox" name="checkBox">
+           <widget class="QCheckBox" name="chkLaunchStartup">
             <property name="text">
              <string>Launch PurP on system startup</string>
             </property>
@@ -62,13 +62,13 @@
         </widget>
        </item>
        <item>
-        <widget class="QGroupBox" name="groupBox_2">
+        <widget class="QGroupBox" name="wndStateGroupBox">
          <property name="title">
           <string>Window State</string>
          </property>
          <layout class="QVBoxLayout" name="verticalLayout_3">
           <item>
-           <widget class="QCheckBox" name="checkBox_2">
+           <widget class="QCheckBox" name="chkCloseSysTray">
             <property name="text">
              <string>Close to system tray</string>
             </property>
@@ -78,20 +78,20 @@
         </widget>
        </item>
        <item>
-        <widget class="QGroupBox" name="groupBox_3">
+        <widget class="QGroupBox" name="notificationsGroupBox">
          <property name="title">
           <string>Notifications</string>
          </property>
          <layout class="QVBoxLayout" name="verticalLayout_4">
           <item>
-           <widget class="QCheckBox" name="checkBox_3">
+           <widget class="QCheckBox" name="chkNotifyStatusChng">
             <property name="text">
              <string>Notify when node status changes</string>
             </property>
            </widget>
           </item>
           <item>
-           <widget class="QCheckBox" name="checkBox_4">
+           <widget class="QCheckBox" name="chkSoundAlerts">
             <property name="text">
              <string>Enable sound alerts</string>
             </property>
@@ -101,27 +101,27 @@
         </widget>
        </item>
        <item>
-        <widget class="QGroupBox" name="groupBox_4">
+        <widget class="QGroupBox" name="updatesGroupBox">
          <property name="title">
           <string>Updates</string>
          </property>
          <layout class="QVBoxLayout" name="verticalLayout_5">
           <item>
-           <widget class="QCheckBox" name="checkBox_5">
+           <widget class="QCheckBox" name="chkAutoCheckUpdates">
             <property name="text">
              <string>Automatically check for updates</string>
             </property>
            </widget>
           </item>
           <item>
-           <widget class="QPushButton" name="pushButton">
+           <widget class="QPushButton" name="btnCheckUpdates">
             <property name="text">
              <string>Check for Updates</string>
             </property>
            </widget>
           </item>
           <item>
-           <widget class="QLabel" name="label">
+           <widget class="QLabel" name="labelCurrentVersion">
             <property name="text">
              <string>Current version:</string>
             </property>
@@ -138,7 +138,7 @@
         <enum>QLayout::SizeConstraint::SetDefaultConstraint</enum>
        </property>
        <item>
-        <widget class="QGroupBox" name="groupBox_11">
+        <widget class="QGroupBox" name="languageGroupBox">
          <property name="title">
           <string>Language</string>
          </property>
@@ -150,17 +150,17 @@
            <number>0</number>
           </property>
           <item row="4" column="0">
-           <widget class="QLabel" name="label_7">
+           <widget class="QLabel" name="labelRegionFormat">
             <property name="text">
              <string>Region Format:</string>
             </property>
            </widget>
           </item>
           <item row="4" column="1">
-           <widget class="QComboBox" name="comboBox_4"/>
+           <widget class="QComboBox" name="regionFormatComboBox"/>
           </item>
           <item row="3" column="0" colspan="2">
-           <widget class="QComboBox" name="comboBox_6"/>
+           <widget class="QComboBox" name="languageComboBox"/>
           </item>
          </layout>
         </widget>
@@ -170,30 +170,30 @@
      <widget class="QWidget" name="page_3">
       <layout class="QVBoxLayout" name="verticalLayout_8">
        <item>
-        <widget class="QGroupBox" name="groupBox_8">
+        <widget class="QGroupBox" name="protocolGroupBox">
          <property name="title">
           <string>Protocol</string>
          </property>
          <layout class="QGridLayout" name="gridLayout_3">
           <item row="0" column="0">
-           <widget class="QLabel" name="label_4">
+           <widget class="QLabel" name="labelMTUSize">
             <property name="text">
              <string>MTU Size:</string>
             </property>
            </widget>
           </item>
           <item row="0" column="1">
-           <widget class="QSpinBox" name="spinBox_2"/>
+           <widget class="QSpinBox" name="MTUSizeSpinBox"/>
           </item>
           <item row="1" column="0">
-           <widget class="QCheckBox" name="checkBox_6">
+           <widget class="QCheckBox" name="chkUDPMode">
             <property name="text">
              <string>UDP</string>
             </property>
            </widget>
           </item>
           <item row="1" column="1">
-           <widget class="QCheckBox" name="checkBox_7">
+           <widget class="QCheckBox" name="chkTCPMode">
             <property name="text">
              <string>TCP</string>
             </property>
@@ -203,23 +203,23 @@
         </widget>
        </item>
        <item>
-        <widget class="QGroupBox" name="groupBox_9">
+        <widget class="QGroupBox" name="securityGroupBox">
          <property name="title">
           <string>Security</string>
          </property>
          <layout class="QGridLayout" name="gridLayout_4">
           <item row="2" column="0">
-           <widget class="QLabel" name="label_5">
+           <widget class="QLabel" name="labelDNSProvider">
             <property name="text">
              <string>DNS Provider:</string>
             </property>
            </widget>
           </item>
           <item row="2" column="1">
-           <widget class="QComboBox" name="comboBox_5"/>
+           <widget class="QComboBox" name="DNSProviderComboBox"/>
           </item>
           <item row="3" column="0">
-           <widget class="QCheckBox" name="checkBox_8">
+           <widget class="QCheckBox" name="chkKillSwitch">
             <property name="text">
              <string>Kill Switch</string>
             </property>
@@ -229,23 +229,23 @@
         </widget>
        </item>
        <item>
-        <widget class="QGroupBox" name="groupBox_10">
+        <widget class="QGroupBox" name="timeOutGroupBox">
          <property name="title">
           <string>Timeout</string>
          </property>
          <layout class="QGridLayout" name="gridLayout_5">
           <item row="0" column="0">
-           <widget class="QLabel" name="label_6">
+           <widget class="QLabel" name="labelResponseTimeout">
             <property name="text">
              <string>Response Timeout:</string>
             </property>
            </widget>
           </item>
           <item row="0" column="1">
-           <widget class="QSpinBox" name="spinBox_3"/>
+           <widget class="QSpinBox" name="responseTimeoutSpinBox"/>
           </item>
           <item row="1" column="0">
-           <widget class="QCheckBox" name="checkBox_9">
+           <widget class="QCheckBox" name="chkAutoConnect">
             <property name="text">
              <string>Auto-Reconnect</string>
             </property>
@@ -259,13 +259,13 @@
      <widget class="QWidget" name="page_2">
       <layout class="QVBoxLayout" name="verticalLayout_6">
        <item>
-        <widget class="QGroupBox" name="groupBox_5">
+        <widget class="QGroupBox" name="themeGroupBox">
          <property name="title">
           <string>Theme</string>
          </property>
          <layout class="QGridLayout" name="gridLayout_2">
           <item row="2" column="0">
-           <widget class="QLabel" name="label_2">
+           <widget class="QLabel" name="labelOpacity">
             <property name="text">
              <string>Opacity:</string>
             </property>
@@ -291,7 +291,7 @@
            </widget>
           </item>
           <item row="3" column="0">
-           <widget class="QSlider" name="horizontalSlider">
+           <widget class="QSlider" name="opacitySliderH">
             <property name="orientation">
              <enum>Qt::Orientation::Horizontal</enum>
             </property>
@@ -301,16 +301,16 @@
         </widget>
        </item>
        <item>
-        <widget class="QGroupBox" name="groupBox_6">
+        <widget class="QGroupBox" name="fontGroupBox">
          <property name="title">
           <string>Font</string>
          </property>
          <layout class="QHBoxLayout" name="horizontalLayout">
           <item>
-           <widget class="QComboBox" name="comboBox_2"/>
+           <widget class="QComboBox" name="fontFamilyGroupBox"/>
           </item>
           <item>
-           <widget class="QLabel" name="label_3">
+           <widget class="QLabel" name="labelFontSize">
             <property name="layoutDirection">
              <enum>Qt::LayoutDirection::LeftToRight</enum>
             </property>
@@ -323,19 +323,19 @@
            </widget>
           </item>
           <item>
-           <widget class="QSpinBox" name="spinBox"/>
+           <widget class="QSpinBox" name="fontSizeSpinBox"/>
           </item>
          </layout>
         </widget>
        </item>
        <item>
-        <widget class="QGroupBox" name="groupBox_7">
+        <widget class="QGroupBox" name="trayIconGroupBox">
          <property name="title">
           <string>Tray Icon</string>
          </property>
          <layout class="QVBoxLayout" name="verticalLayout_7">
           <item>
-           <widget class="QComboBox" name="comboBox_3"/>
+           <widget class="QComboBox" name="trayIconComboBox"/>
           </item>
          </layout>
         </widget>
