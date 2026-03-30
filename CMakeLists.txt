@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.19)
-project(purp-desktop LANGUAGES CXX)
+project(purp-desktop VERSION 0.1.0 LANGUAGES CXX)
 
 find_package(Qt6 6.5 REQUIRED COMPONENTS Core Widgets LinguistTools)
 
@@ -18,6 +18,10 @@ qt_add_executable(purp-desktop
 qt_add_translations(
     TARGETS purp-desktop
     TS_FILES purp-desktop_ru_RU.ts
+)
+
+target_compile_definitions(purp-desktop PRIVATE
+    APP_VERSION="${PROJECT_VERSION}"
 )
 
 target_link_libraries(purp-desktop
