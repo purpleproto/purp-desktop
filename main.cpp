@@ -11,6 +11,9 @@ int main(int argc, char *argv[])
     QTranslator translator;
 
     a.setApplicationVersion(APP_VERSION);
+    a.setOrganizationDomain("Purple Protocol");
+    a.setApplicationName("PurP");
+    a.setOrganizationDomain("github.com/purpleproto");
 
     const QStringList uiLanguages = QLocale::system().uiLanguages();
     for (const QString &locale : uiLanguages) {
