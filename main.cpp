@@ -1,4 +1,5 @@
 #include "mainwindow.h"
+#include "settingsmanager.h"
 
 #include <QApplication>
 #include <QLocale>
@@ -7,8 +8,9 @@
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-
     QTranslator translator;
+
+    SettingsManager::instance().init();
 
     a.setApplicationVersion(APP_VERSION);
     a.setOrganizationDomain("Purple Protocol");

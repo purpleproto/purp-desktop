@@ -14,6 +14,8 @@ qt_add_executable(purp-desktop
     README.md
     .gitignore
     settingsdialog.h settingsdialog.cpp settingsdialog.ui
+    settingsmanager.h
+    settingsmanager.cpp
 )
 
 qt_add_translations(
