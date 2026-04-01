@@ -18,6 +18,12 @@ SettingsManager &SettingsManager::instance()
 
 void SettingsManager::init()
 {
+    if (!QFile::exists(m_configPath))
+    {
+        qDebug() << "Config file not found, creating default...";
+        setGeneralConfig(m_generalConfig);
+    }
+
     QSettings s(m_configPath, QSettings::IniFormat);
 
     s.beginGroup("General");

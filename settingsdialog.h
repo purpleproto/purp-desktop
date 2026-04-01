@@ -21,8 +21,13 @@ private slots:
 
     void on_listSettings_currentItemChanged(QListWidgetItem *current, QListWidgetItem *previous);
 
+    void on_buttonBox_accepted();
+
 private:
     Ui::SettingsDialog *ui;
+
+    void loadSettingsToUI();
+    void saveUItoSettings();
 };
 
 #endif // SETTINGSDIALOG_H
