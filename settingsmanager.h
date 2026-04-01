@@ -5,17 +5,84 @@
 #include <QSettings>
 #include <QString>
 
+
 class SettingsManager : public QObject
 {
     Q_OBJECT
 public:
     struct GeneralConfig
     {
-        bool autostart;
-        bool closeToTray;
-        bool notifyStatus;
-        bool soundEnabled;
-        bool autoCheckUpdates;
+        struct General
+        {
+            struct Startup
+            {
+                bool launchStartup;
+            } Startup;
+
+            struct Window
+            {
+                bool closeToTray;
+            } Window;
+
+            struct Notifications
+            {
+                bool notifyStatus;
+                bool soundEnabled;
+            } Notifications;
+
+            struct Updates
+            {
+                bool autoCheckUpdates;
+            } Updates;
+        } General;
+
+        struct Appearance
+        {
+            struct Theme
+            {
+                QString mode;
+                int opacity;
+            } Theme;
+
+            struct Font
+            {
+                QString family;
+                int size;
+            } Font;
+
+            struct TrayIcon
+            {
+                QString style;
+            } TrayIcon;
+        } Appearance;
+
+        struct Connection
+        {
+            struct Protocol
+            {
+                int mtuSize;
+                bool udpMpde;
+                bool tcpMode;
+            } Protocol;
+
+            struct Security
+            {
+                QString dnsProvider;
+                bool killSwitch;
+            } Security;
+
+            struct Timeout
+            {
+                int responseTimeout;
+                bool autoReconnect;
+            } Timeout;
+        } Connection;
+
+        struct Language
+        {
+            QString locale;
+            QString regionFormat;
+        } Language;
     };
 
     static SettingsManager &instance();

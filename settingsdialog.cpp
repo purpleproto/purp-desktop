@@ -34,22 +34,51 @@ void SettingsDialog::loadSettingsToUI()
 {
     auto config = SettingsManager::instance().generalConfig();
 
-    ui->chkLaunchStartup->setChecked(config.autostart);
-    ui->chkAutoCheckUpdates->setChecked(config.autoCheckUpdates);
-    ui->chkCloseSysTray->setChecked(config.closeToTray);
-    ui->chkNotifyStatusChng->setChecked(config.notifyStatus);
-    ui->chkSoundAlerts->setChecked(config.soundEnabled);
+    ui->chkLaunchStartup->setChecked(config.General.Startup.launchStartup);
+    ui->chkCloseSysTray->setChecked(config.General.Window.closeToTray);
+    ui->chkNotifyStatusChng->setChecked(config.General.Notifications.notifyStatus);
+    ui->chkSoundAlerts->setChecked(config.General.Notifications.soundEnabled);
+    ui->chkAutoCheckUpdates->setChecked(config.General.Updates.autoCheckUpdates);
+
+    // TODO: Theme Combo Box
+    ui->opacitySliderH->setValue(config.Appearance.Theme.opacity);
+    // TODO: Font Combo Box
+    ui->fontSizeSpinBox->setValue(config.Appearance.Font.size);
+    // TODO: Tray Icon Style Combo Box
+
+    ui->MTUSizeSpinBox->setValue(config.Connection.Protocol.mtuSize);
+    ui->chkUDPMode->setChecked(config.Connection.Protocol.udpMpde);
+    ui->chkTCPMode->setChecked(config.Connection.Protocol.tcpMode);
+    // TODO: DNS Provider Combo Box
+
+    ui->chkKillSwitch->setChecked(config.Connection.Security.killSwitch);
+    ui->responseTimeoutSpinBox->setValue(config.Connection.Timeout.responseTimeout);
+    ui->chkAutoReconnect->setChecked(config.Connection.Timeout.autoReconnect);
+
+    // TODO: Locale Combo Box
+    // TODO: Region Format Combo Box
 }
 
 void SettingsDialog::saveUItoSettings()
 {
     SettingsManager::GeneralConfig config;
 
-    config.autostart = ui->chkLaunchStartup->isChecked();
-    config.closeToTray = ui->chkCloseSysTray->isChecked();
-    config.notifyStatus = ui->chkNotifyStatusChng->isChecked();
-    config.soundEnabled = ui->chkSoundAlerts->isChecked();
-    config.autoCheckUpdates = ui->chkAutoCheckUpdates->isChecked();
+    config.General.Startup.launchStartup = ui->chkLaunchStartup->isChecked();
+    config.General.Window.closeToTray = ui->chkCloseSysTray->isChecked();
+    config.General.Notifications.notifyStatus = ui->chkNotifyStatusChng->isChecked();
+    config.General.Notifications.soundEnabled = ui->chkSoundAlerts->isChecked();
+    config.General.Updates.autoCheckUpdates = ui->chkAutoCheckUpdates->isChecked();
+
+    config.Appearance.Theme.opacity = ui->opacitySliderH->value();
+    config.Appearance.Font.size = ui->fontSizeSpinBox->value();
+
+    config.Connection.Protocol.mtuSize = ui->MTUSizeSpinBox->value();
+    config.Connection.Protocol.udpMpde = ui->chkUDPMode->isChecked();
+    config.Connection.Protocol.tcpMode = ui->chkTCPMode->isChecked();
+
+    config.Connection.Security.killSwitch = ui->chkKillSwitch->isChecked();
+    config.Connection.Timeout.responseTimeout = ui->responseTimeoutSpinBox->value();
+    config.Connection.Timeout.autoReconnect = ui->chkAutoReconnect->isChecked();
 
     SettingsManager::instance().setGeneralConfig(config);
 }
