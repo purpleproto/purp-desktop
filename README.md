@@ -1,3 +1,5 @@
+<img align="left" width="64" src="assets/logo.png">
+
 # PurP Desktop Client
 
 <img align="right" width="159px" src="assets/screenshot.PNG">
