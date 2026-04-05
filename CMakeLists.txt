@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.19)
-project(purp-desktop VERSION 0.1.4 LANGUAGES CXX)
+project(purp-desktop VERSION 0.1.5 LANGUAGES CXX)
 
 set(CMAKE_AUTORCC ON)
 
