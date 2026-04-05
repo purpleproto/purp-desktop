@@ -2,6 +2,8 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QSystemTrayIcon>
+#include <QMenu>
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -22,5 +24,12 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
+
+    QSystemTrayIcon *trayIcon;
+    QMenu *trayMenu;
+
+    void createTrayIcon();
+protected:
+    void closeEvent(QCloseEvent *event) override;
 };
 #endif // MAINWINDOW_H

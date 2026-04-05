@@ -1,6 +1,8 @@
 cmake_minimum_required(VERSION 3.19)
 project(purp-desktop VERSION 0.1.4 LANGUAGES CXX)
 
+set(CMAKE_AUTORCC ON)
+
 find_package(Qt6 6.5 REQUIRED COMPONENTS Core Widgets LinguistTools)
 
 qt_standard_project_setup()
@@ -16,6 +18,8 @@ qt_add_executable(purp-desktop
     settingsdialog.h settingsdialog.cpp settingsdialog.ui
     settingsmanager.h
     settingsmanager.cpp
+    resources.qrc
+
 )
 
 qt_add_translations(
